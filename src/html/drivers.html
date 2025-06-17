@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Drivers 2025</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/mediaqueries.css" />
+    <link rel="stylesheet" href="../css/pilotos.css" />
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script type="module" src="../js/drivers.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link rel="icon" href="src/assets/images/logo-f1.png" type="image/png">
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <nav id="desktop-nav">
+      <div class="logo"><img src="../assets/images/logof1-blanco.png" alt="logo"></div>
+      <div>
+        <ul class="nav-links">
+          <li><a class="drivers-link" href="drivers.html">Drivers</a></li>
+          <li><a class="vehicle-link" href="vehicles.html">Vehicles</a></li>
+          <li><a class="tracks-link" href="tracks.html">Tracks</a></li>
+          <li><a class="teams-links" href="teams.html">Teams</a></li>
+          <li><a class="simulation-links" href="simulation.html">Simulation</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="../assets/images/logof1-blanco.png" alt="logo"></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a class="drivers-link" href="drivers">Drivers</a></li>
+          <li><a class="vehicle-link" href="vehicles.html">Vehicles</a></li>
+          <li><a class="tracks-link" href="tracks.html">Tracks</a></li>
+          <li><a class="teams-links" href="teams.html">Teams</a></li>
+          <li><a class="simulation-links" href="simulation.html">Simulation</a></li>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section id="drivers-section" style="display: block;">
+        <h1 class="titulo">F1 Drivers 2025</h1>
+        <piloto-card></piloto-card>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Simulación de Fórmula 1</p>
+    </footer>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: { enable: true, value_area: 800 }
+          },
+          color: { value: "#ffffff" },
+          shape: {
+            type: "circle",
+            stroke: { width: 0, color: "#000000" },
+            polygon: { nb_sides: 5 }
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: { enable: false }
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: { enable: false }
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ff1e00",
+            opacity: 0.4,
+            width: 1
+          },
+          move: {
+            enable: true,
+            speed: 3,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out"
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "grab" },
+            onclick: { enable: true, mode: "push" },
+            resize: true
+          },
+          modes: {
+            grab: { distance: 200, line_linked: { opacity: 0.5 } },
+            push: { particles_nb: 4 }
+          }
+        },
+        retina_detect: true
+      });
+    </script>
+  </body>
+</html> 

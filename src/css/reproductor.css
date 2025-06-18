@@ -1,0 +1,760 @@
+/* Estilos del reproductor de música */
+.music-player {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #0d0d0d; /* negro sólido */
+    border-radius: 16px;
+    padding: 12px;
+    width: 280px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* sombra sutil */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.2s ease;
+    z-index: 1000;
+  
+  
+  }
+  
+
+.music-player:hover {
+    transform: translateY(-2px);
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.player-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.track-info {
+    overflow: hidden;
+}
+
+.player-title {
+    color: #fff;
+    font-size: 14px;               /* Un poco más grande para mejor legibilidad */
+    font-weight: 600;              /* Un poco más de grosor para mejor presencia */
+    font-family: 'Poppins', sans-serif;  /* Fuente moderna, alternativa a Roboto */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;         /* Espaciado sutil entre letras */
+}
+
+.player-artist {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;                        /* Un poco más grande para legibilidad */
+    font-weight: 400;                      /* Peso normal, ya que es información secundaria */
+    font-family: 'Poppins', sans-serif;   /* Misma fuente que en el título */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.2px;                 /* Ligero espaciado para mejor lectura */
+}
+
+.player-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 253, 253, 0.7);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: #ff0000;
+}
+
+.action-btn.active {
+    color: #ff0000;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    color: #ff0000;
+}
+
+.play-btn {
+    font-size: 16px;
+    padding: 8px;
+    background: rgba(255, 0, 0, 0.15);
+}
+
+.play-btn:hover {
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.current-time, .total-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    min-width: 35px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 4px;
+    margin-top: 8px;
+}
+
+.volume-control i {
+    color: rgba(226, 226, 226, 0.6);
+    font-size: 12px;
+}
+
+.volume-slider-container {
+    flex: 1;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#volumeControl {
+    width: 100%;
+    height: 3px;
+    appearance: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: linear-gradient(to right, #ff0000 var(--val, 0%), rgba(255, 255, 255, 0.1) var(--val, 0%));
+    border-radius: 2px;
+  }
+  
+
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeControl::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.file-upload {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: color 0.2s ease;
+}
+
+.file-label:hover {
+    color: #ff0000;
+}
+
+.volume-slider-container {
+    flex: 1;
+    height: 3px;  /* Línea delgada */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;  /* ✅ Centra el input verticalmente */
+}
+
+#volumeControl::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    margin-top: -3.5px;  /* ✅ Ajusta esto para centrar la bolita respecto a la línea */
+    cursor: pointer;
+    position: relative;
+}
+
+#volumeControl::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    margin-top: -3.5px;  /* Igual que en Webkit */
+}
+
+
+.music-player:hover {
+    transform: translateY(-2px);
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.player-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.track-info {
+    overflow: hidden;
+}
+
+.player-title {
+    color: #fff;
+    font-size: 14px;               /* Un poco más grande para mejor legibilidad */
+    font-weight: 600;              /* Un poco más de grosor para mejor presencia */
+    font-family: 'Poppins', sans-serif;  /* Fuente moderna, alternativa a Roboto */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.3px;         /* Espaciado sutil entre letras */
+}
+
+.player-artist {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;                        /* Un poco más grande para legibilidad */
+    font-weight: 400;                      /* Peso normal, ya que es información secundaria */
+    font-family: 'Poppins', sans-serif;   /* Misma fuente que en el título */
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.2px;                 /* Ligero espaciado para mejor lectura */
+}
+
+.player-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    transition: color 0.2s ease;
+}
+
+.action-btn:hover {
+    color: #ff0000;
+}
+
+.action-btn.active {
+    color: #ff0000;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.control-btn:hover {
+    color: #ff0000;
+}
+
+.play-btn {
+    font-size: 16px;
+    padding: 8px;
+    background: rgba(255, 0, 0, 0.15);
+}
+
+.play-btn:hover {
+    background: rgba(255, 0, 0, 0.25);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 4px;
+}
+
+.current-time, .total-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    min-width: 35px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    background: #ff0000;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 4px;
+    margin-top: 8px;
+}
+
+.volume-control i {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+}
+
+.volume-slider-container {
+    flex: 1;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#volumeControl {
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeControl::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.file-upload {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: color 0.2s ease;
+}
+
+.file-label:hover {
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        width: 260px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        width: 240px;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px;
+    }
+    
+    .player-title {
+        font-size: 12px;
+    }
+    
+    .player-artist {
+        font-size: 10px;
+    }
+    
+    .control-btn {
+        font-size: 13px;
+        padding: 5px;
+    }
+    
+    .play-btn {
+        font-size: 15px;
+        padding: 7px;
+    }
+}
+
+.playlist-container {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #0d0d0d; /* negro sólido */
+    border-radius: 16px;
+    padding: 12px;
+    width: 280px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* sombra sutil */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.2s ease;
+    z-index: 1000;
+  
+}
+
+.playlist-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.playlist-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.playlist-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 4px;
+}
+
+.playlist-item:hover {
+    background: rgba(255, 0, 0, 0.1);
+}
+
+.playlist-item.active {
+    background: rgba(245, 5, 5, 0.2);
+}
+
+.track-number {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    min-width: 20px;
+}
+
+.playlist-item .track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.playlist-item .track-title {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-item .track-artist {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 600px) {
+  .music-player {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+    padding: 8px 2vw 8px 2vw !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .player-header, .player-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .progress-container, .volume-control {
+    width: 100%;
+  }
+  .player-logo {
+    width: 22px;
+    height: 22px;
+  }
+  .player-title {
+    font-size: 12px;
+  }
+  .player-artist {
+    font-size: 10px;
+  }
+  .player-actions {
+    gap: 2px;
+  }
+  .action-btn, .control-btn {
+    font-size: 16px;
+    padding: 6px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+  }
+  .player-controls {
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+  }
+  .control-buttons {
+    gap: 8px;
+    margin: 4px 0;
+  }
+  .progress-container {
+    gap: 4px;
+    padding: 0 2px;
+  }
+  .progress-bar {
+    height: 4px;
+  }
+  .current-time, .total-time {
+    font-size: 10px;
+    min-width: 28px;
+  }
+  .volume-control {
+    gap: 4px;
+    margin-top: 4px;
+    padding: 0 2px;
+  }
+  .volume-slider-container {
+    height: 4px;
+  }
+  #volumeControl {
+    width: 70px;
+    height: 4px;
+  }
+  .file-upload {
+    margin-top: 4px;
+  }
+  .file-label {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .playlist-container {
+    max-height: 100px;
+    padding: 0 2px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .music-player {
+    padding: 4px 0 4px 0;
+    border-radius: 8px 8px 0 0;
+  }
+  .player-logo {
+    width: 18px;
+    height: 18px;
+  }
+  .player-title {
+    font-size: 10px;
+  }
+  .player-artist {
+    font-size: 8px;
+  }
+  .action-btn, .control-btn {
+    font-size: 14px;
+    min-width: 30px;
+    min-height: 30px;
+  }
+  #volumeControl {
+    width: 50px;
+  }
+}
+
+.playing-indicator {
+  animation: playingPulse 1s infinite alternate;
+  box-shadow: 0 0 0 2px #ff0000, 0 0 10px 2px #ff000044;
+  background: rgba(255,0,0,0.08);
+}
+
+@keyframes playingPulse {
+  0% {
+    box-shadow: 0 0 0 2px #ff0000, 0 0 10px 2px #ff000044;
+    background: rgba(255,0,0,0.08);
+  }
+  100% {
+    box-shadow: 0 0 0 6px #ff000033, 0 0 20px 6px #ff000022;
+    background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.register-link {
+  display: block;
+  margin-top: 18px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+.register-link span {
+  color: #ff0000;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.register-link:hover span {
+  color: #fff;
+  background: #ff0000;
+  border-radius: 3px;
+  padding: 0 4px;
+}
+  

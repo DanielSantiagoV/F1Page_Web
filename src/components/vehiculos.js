@@ -12,8 +12,8 @@ const vehiculoCardStyles = `
 
     .card {
       background-color: #1c1c1e;
-      color: #f0f0f0;
-      border: 2px solid #ff3c3c;
+      color:rgb(255, 0, 0);
+      border: 2px solidrgb(255, 5, 5);
       border-radius: 16px;
       padding: 1.2rem;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);

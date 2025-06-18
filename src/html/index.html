@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<ht lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formula 1</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/variable.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/variable.css">
     <link rel="stylesheet" href="../css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="src/assets/images/logo-f1.png" type="image/png">
+    <link rel="icon" href="src/assets/images/logo-f1.png?v=2" type="image/png">
 </head>
     <body>
         <!-- Barra superior blanca -->
@@ -38,8 +38,10 @@
                      loading="lazy" />
                </div>
 
-                <a href="login.html" class="btn-signin"><i class="fas fa-user"></i> SIGN IN</a>
-                <a href="register.html" class="btn-subscribe">SUBSCRIBE</a>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-signin"><i class="fas fa-user"></i> SIGN IN</a>
+                    <a href="registrar.html" class="btn-subscribe">SUBSCRIBE</a>
+                </div>
             </div>
         </div>
         <!-- Barra roja principal -->
@@ -203,23 +205,23 @@
                   <h1>Driver Standings</h1>
                   <div class="cards" aria-label="Top 3 driver cards">
                     <article class="card norris">
-                      <img src="/src/assets/images/lando-norris.png" alt="" />
+                      <img src="../assets/images/lando-norris.png" alt="" />
                       <div class="card-footer">
-                        <p>Lando <img src="/src/assets/images/uk-flag.png" alt="" class="country"/></p>
+                        <p>Lando <img src="../assets/images/uk-flag.png" alt="" class="country"/></p>
                         <p class="name">Norris</p>
                       </div>
                     </article>
                     <article class="card piastri">
-                      <img src="/src/assets/images/oscar-piastri.png" alt="" />
+                      <img src="../assets/images/oscar-piastri.png" alt="" />
                       <div class="card-footer">
-                        <p>Oscar <img src="/src/assets/images/au-flag.png" alt="" class="country"/></p>
+                        <p>Oscar <img src="../assets/images/au-flag.png" alt="" class="country"/></p>
                         <p class="name">Piastri</p>
                       </div>
                     </article>
                     <article class="card verstappen">
-                      <img src="/src/assets/images/max-verstappen.png" alt="" />
+                      <img src="../assets/images/max-verstappen.png" alt="" />
                       <div class="card-footer">
-                        <p>Max <img src="/src/assets/images/nl-flag.png" alt="" class="country"/></p>
+                        <p>Max <img src="../assets/images/nl-flag.png" alt="" class="country"/></p>
                         <p class="name">Verstappen</p>
                       </div>
                     </article>
@@ -284,8 +286,8 @@
             <div class="footer-apps-social">
                 <div class="footer-apps">
                     <span>DOWNLOAD THE OFFICIAL F1 APP</span>
-                    <a href="#"><img src="/src/media/google-play.png" alt="Google Play" /></a>
-                    <a href="#"><img src="/src/media/app-store.png" alt="App Store" /></a>
+                    <a href="#"><img src="../assets/images/logo-f1.png" alt="Google Play" /></a>
+                    <a href="#"><img src="../assets/images/logo-f1.png" alt="App Store" /></a>
                 </div>
                 <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -296,7 +298,7 @@
             </div>
             <div class="footer-partners">
                 <div class="footer-partners-title">
-                    <img src="/src/media/logo-f1.png" alt="F1 logo" class="footer-f1-logo" />
+                    <img src="../assets/images/logo-f1.png" alt="F1 logo" class="footer-f1-logo" />
                     <span>Our partners <i class="fas fa-chevron-right"></i></span>
                 </div>
                 <div class="footer-partners-logos partners-row">

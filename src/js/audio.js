@@ -14,8 +14,6 @@ const playerArtist = document.querySelector('.player-artist');
 const fileInput = document.getElementById('fileInput');
 const shuffleBtn = document.getElementById('shuffleBtn');
 const playlistContainer = document.querySelector('.playlist-container');
-const volumeSlider = document.getElementById('volumeControl');
-
 
 // Estado inicial
 let isPlaying = false;
@@ -26,32 +24,36 @@ let isShuffleEnabled = false;
 let originalPlaylist = [];
 let shuffledPlaylist = [];
 
+// Detectar si estamos en index.html o en una página dentro de src/html/
+const isIndexPage = window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/');
+const audioPath = isIndexPage ? 'src/assets/audio/' : '../assets/audio/';
+
 // Playlist predefinida
 const defaultPlaylist = [
     {
-        title: 'bedroom',
+        title: 'Bedroom',
         artist: 'Kylof Soze',
-        src: '../assets/audio/bedroom.mp3'
+        src: audioPath + 'bedroom.mp3'
     },
     {
         title: 'Witapoke',
         artist: 'Kylof Soze',
-        src: '../assets/audio/witapoke.mp3'
+        src: audioPath + 'witapoke.mp3'
     },
     {
         title: 'Push Me',
         artist: 'Kylof Soze',
-        src: '../assets/audio/pushme.mp3'
+        src: audioPath + 'pushme.mp3'
     },
     {
         title: 'AshKash',
         artist: '1nonly',
-        src: '../assets/audio/ashkash.mp3'
+        src: audioPath + 'ashkash.mp3'
     },
     {
         title: 'What I Do', 
         artist: '1nonly',
-        src: '../assets/audio/whatido.mp3'
+        src: audioPath + 'whatido.mp3'
     }
 ];
 
@@ -68,11 +70,14 @@ function formatTime(seconds) {
 }
 
 function updatePlayPauseIcon() {
-    playPauseBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
-    playPauseBtn.setAttribute('aria-label', isPlaying ? 'Pause' : 'Play');
+    if (playPauseBtn) {
+        playPauseBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+        playPauseBtn.setAttribute('aria-label', isPlaying ? 'Pause' : 'Play');
+    }
 }
 
 function updateVolumeIcon() {
+    if (!audioToggle) return;
     const volume = audio.volume;
     if (volume === 0 || isMuted) {
         audioToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
@@ -90,7 +95,9 @@ function updateVolumeIcon() {
 }
 
 function updateProgress() {
-    if (audio.duration) {
+    if (!audio || !progressBar || !currentTimeEl || !totalTimeEl) return;
+    
+    if (audio.duration && !isNaN(audio.duration)) {
         const progressPercent = (audio.currentTime / audio.duration) * 100;
         progressBar.style.width = `${progressPercent}%`;
         currentTimeEl.textContent = formatTime(audio.currentTime);
@@ -109,7 +116,9 @@ function shuffleArray(array) {
 
 function updateShuffleState() {
     isShuffleEnabled = !isShuffleEnabled;
-    shuffleBtn.classList.toggle('active', isShuffleEnabled);
+    if (shuffleBtn) {
+        shuffleBtn.classList.toggle('active', isShuffleEnabled);
+    }
     if (isShuffleEnabled) {
         shuffledPlaylist = shuffleArray(originalPlaylist);
         // Mantener la canción actual al inicio
@@ -130,47 +139,39 @@ function loadTrack(trackIndex) {
     const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
     const track = playlist[trackIndex];
     
-    // Crear nuevo elemento de audio
-    const newAudio = new Audio();
-    newAudio.src = track.src;
-    newAudio.preload = 'auto';
+    if (!track || !audio) return;
     
-    // Configurar eventos del nuevo audio
-    newAudio.addEventListener('canplaythrough', () => {
-        audio.src = track.src;
-        audio.load();
-        playerTitle.textContent = track.title;
-        playerArtist.textContent = track.artist;
-        
-        // Actualizar estado de los botones
+    // Actualizar la fuente del audio
+    audio.src = track.src;
+    audio.load();
+    
+    // Actualizar información de la canción
+    if (playerTitle) playerTitle.textContent = track.title;
+    if (playerArtist) playerArtist.textContent = track.artist;
+    
+    // Actualizar estado de los botones
+    if (prevBtn) {
         prevBtn.disabled = trackIndex === 0;
-        nextBtn.disabled = trackIndex === playlist.length - 1;
-        
-        // Actualizar clases visuales
         prevBtn.classList.toggle('disabled', trackIndex === 0);
+    }
+    if (nextBtn) {
+        nextBtn.disabled = trackIndex === playlist.length - 1;
         nextBtn.classList.toggle('disabled', trackIndex === playlist.length - 1);
-        
-        // Actualizar lista de reproducción
-        updatePlaylistUI();
-        
-        // Si estaba reproduciendo, continuar
-        if (isPlaying) {
-            audio.play().catch(error => {
-                console.error('Error al reproducir:', error);
-                isPlaying = false;
-                updatePlayPauseIcon();
-            });
-        }
-    });
+    }
     
-    newAudio.addEventListener('error', (e) => {
-        console.error('Error al cargar el audio:', e);
-        playerTitle.textContent = 'Error al cargar el audio';
-        playerArtist.textContent = 'Intente nuevamente';
-    });
+    // Si estaba reproduciendo, continuar
+    if (isPlaying) {
+        audio.play().catch(error => {
+            console.error('Error al reproducir:', error);
+            isPlaying = false;
+            updatePlayPauseIcon();
+        });
+    }
 }
 
 function updatePlaylistUI() {
+    if (!playlistContainer) return;
+    
     const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
     playlistContainer.innerHTML = '';
     
@@ -195,193 +196,91 @@ function updatePlaylistUI() {
     });
 }
 
-volumeSlider.addEventListener('input', function () {
-    const value = (this.value - this.min) / (this.max - this.min) * 100;
-    this.style.setProperty('--val', `${value}%`);
-  });
-  
 // Event Listeners
-playPauseBtn.addEventListener('click', () => {
-    if (isPlaying) {
-        audio.pause();
-    } else {
-        audio.play().catch(error => {
-            console.error('Error al reproducir:', error);
-            return;
-        });
-    }
-    isPlaying = !isPlaying;
-    updatePlayPauseIcon();
-});
+if (playPauseBtn) {
+    playPauseBtn.addEventListener('click', () => {
+        if (!audio) return;
+        
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play().catch(error => {
+                console.error('Error al reproducir:', error);
+                return;
+            });
+        }
+        isPlaying = !isPlaying;
+        updatePlayPauseIcon();
+    });
+}
 
-prevBtn.addEventListener('click', () => {
-    const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
-    if (currentTrackIndex > 0) {
-        currentTrackIndex--;
-        loadTrack(currentTrackIndex);
-    }
-});
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
+        if (currentTrackIndex > 0) {
+            currentTrackIndex--;
+            loadTrack(currentTrackIndex);
+        }
+    });
+}
 
-nextBtn.addEventListener('click', () => {
-    const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
-    if (currentTrackIndex < playlist.length - 1) {
-        currentTrackIndex++;
-        loadTrack(currentTrackIndex);
-    }
-});
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
+        if (currentTrackIndex < playlist.length - 1) {
+            currentTrackIndex++;
+            loadTrack(currentTrackIndex);
+        }
+    });
+}
 
-audioToggle.addEventListener('click', () => {
-    if (isMuted) {
-        audio.volume = lastVolume;
-        volumeControl.value = lastVolume * 100;
-    } else {
-        lastVolume = audio.volume;
-        audio.volume = 0;
-        volumeControl.value = 0;
-    }
-    isMuted = !isMuted;
-    updateVolumeIcon();
-});
+if (audioToggle) {
+    audioToggle.addEventListener('click', () => {
+        if (!audio) return;
+        
+        if (isMuted) {
+            audio.volume = lastVolume;
+            if (volumeControl) volumeControl.value = lastVolume * 100;
+        } else {
+            lastVolume = audio.volume;
+            audio.volume = 0;
+            if (volumeControl) volumeControl.value = 0;
+        }
+        isMuted = !isMuted;
+        updateVolumeIcon();
+    });
+}
 
-volumeControl.addEventListener('input', (e) => {
-    const volume = e.target.value / 100;
-    audio.volume = volume;
-    isMuted = volume === 0;
-    updateVolumeIcon();
-});
+if (volumeControl) {
+    volumeControl.addEventListener('input', (e) => {
+        if (!audio) return;
+        
+        const volume = e.target.value / 100;
+        audio.volume = volume;
+        isMuted = volume === 0;
+        updateVolumeIcon();
+    });
+}
 
-progressContainer.addEventListener('click', (e) => {
-    if (audio.duration) {
+if (progressContainer) {
+    progressContainer.addEventListener('click', (e) => {
+        if (!audio || !audio.duration) return;
+        
         const width = progressContainer.clientWidth;
         const clickX = e.offsetX;
         const duration = audio.duration;
         audio.currentTime = (clickX / width) * duration;
-    }
-});
+    });
+}
 
-shuffleBtn.addEventListener('click', updateShuffleState);
+if (shuffleBtn) {
+    shuffleBtn.addEventListener('click', updateShuffleState);
+}
 
 // Eventos del audio
-audio.addEventListener('timeupdate', updateProgress);
-
-audio.addEventListener('ended', () => {
-    const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
-    if (currentTrackIndex < playlist.length - 1) {
-        currentTrackIndex++;
-    } else {
-        currentTrackIndex = 0;
-    }
-    loadTrack(currentTrackIndex);
-});
-
-audio.addEventListener('error', (e) => {
-    console.error('Error en el audio:', e);
-    playerTitle.textContent = 'Error en la reproducción';
-    playerArtist.textContent = 'Intente nuevamente';
-});
-
-// Manejo de archivos de audio
-fileInput.addEventListener('change', (e) => {
-    const files = Array.from(e.target.files).filter(file => file.type.startsWith('audio/'));
-    
-    if (files.length > 0) {
-        files.forEach(file => {
-            const url = URL.createObjectURL(file);
-            const newTrack = {
-                title: file.name.replace(/\.[^/.]+$/, ""),
-                artist: 'Archivo local',
-                src: url
-            };
-            originalPlaylist.push(newTrack);
-        });
-        
-        if (isShuffleEnabled) {
-            shuffledPlaylist = shuffleArray(originalPlaylist);
-        }
-        
-        updatePlaylistUI();
-    }
-});
-
-// Inicialización
-audio.volume = 1;
-volumeControl.value = 100;
-updateVolumeIcon();
-updatePlayPauseIcon();
-loadTrack(currentTrackIndex);
-updatePlaylistUI();
-
-// --- AUTOPLAY UNIVERSAL, INDICADOR VISUAL, LOOP Y FALLBACK INTELIGENTE ---
-function createMusicActivationButton() {
-    if (document.getElementById('activate-music-btn')) return;
-    const btn = document.createElement('button');
-    btn.id = 'activate-music-btn';
-    btn.innerHTML = '<i class="fas fa-music"></i> Activar música';
-    btn.style.position = 'fixed';
-    btn.style.bottom = '90px';
-    btn.style.right = '20px';
-    btn.style.zIndex = '2000';
-    btn.style.background = 'linear-gradient(90deg, #ff0000, #ff4d4d)';
-    btn.style.color = '#fff';
-    btn.style.border = 'none';
-    btn.style.borderRadius = '24px';
-    btn.style.padding = '12px 22px';
-    btn.style.fontSize = '16px';
-    btn.style.fontWeight = 'bold';
-    btn.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
-    btn.style.cursor = 'pointer';
-    btn.style.transition = 'opacity 0.3s';
-    btn.style.opacity = '0.95';
-    btn.style.display = 'flex';
-    btn.style.alignItems = 'center';
-    btn.style.gap = '10px';
-    btn.tabIndex = 0;
-    btn.setAttribute('aria-label', 'Activar música de fondo');
-    btn.addEventListener('click', () => {
-        tryAutoplay(true);
-        btn.style.opacity = '0';
-        setTimeout(() => btn.remove(), 400);
-    });
-    document.body.appendChild(btn);
-}
-
-function tryAutoplay(forcePlay = false) {
-    if (!audio) return;
-    currentTrackIndex = 0;
-    loadTrack(currentTrackIndex);
-    audio.volume = 0.7;
-    // Si es un intento forzado (por botón), usar play() directo
-    const playPromise = forcePlay ? audio.play() : audio.play();
-    playPromise.then(() => {
-        isPlaying = true;
-        updatePlayPauseIcon();
-        showPlayingIndicator(true);
-        const btn = document.getElementById('activate-music-btn');
-        if (btn) btn.remove();
-    }).catch(() => {
-        // Si el navegador bloquea autoplay, mostrar el botón flotante
-        isPlaying = false;
-        updatePlayPauseIcon();
-        showPlayingIndicator(false);
-        createMusicActivationButton();
-    });
-}
-
-document.addEventListener('DOMContentLoaded', () => tryAutoplay(false));
-window.addEventListener('load', () => tryAutoplay(false));
-
-// Indicador visual de reproducción (animación en el botón de play/pause)
-function showPlayingIndicator(isPlaying) {
-    if (!playPauseBtn) return;
-    if (isPlaying) {
-        playPauseBtn.classList.add('playing-indicator');
-    } else {
-        playPauseBtn.classList.remove('playing-indicator');
-    }
-}
-
-// Reproducir la siguiente canción automáticamente al terminar, en bucle
 if (audio) {
+    audio.addEventListener('timeupdate', updateProgress);
+    
     audio.addEventListener('ended', () => {
         const playlist = isShuffleEnabled ? shuffledPlaylist : originalPlaylist;
         if (currentTrackIndex < playlist.length - 1) {
@@ -390,21 +289,65 @@ if (audio) {
             currentTrackIndex = 0;
         }
         loadTrack(currentTrackIndex);
-        audio.play().then(() => {
-            isPlaying = true;
-            updatePlayPauseIcon();
-            showPlayingIndicator(true);
-        }).catch(() => {
-            isPlaying = false;
-            updatePlayPauseIcon();
-            showPlayingIndicator(false);
-        });
+    });
+    
+    audio.addEventListener('error', (e) => {
+        console.error('Error en el audio:', e);
+        if (playerTitle) playerTitle.textContent = 'Error en la reproducción';
+        if (playerArtist) playerArtist.textContent = 'Intente nuevamente';
+    });
+    
+    audio.addEventListener('canplay', () => {
+        console.log('Audio cargado correctamente');
     });
 }
 
-// Actualizar el indicador visual cada vez que se cambia el estado
-if (playPauseBtn) {
-    playPauseBtn.addEventListener('click', () => {
-        showPlayingIndicator(isPlaying);
+// Manejo de archivos de audio
+if (fileInput) {
+    fileInput.addEventListener('change', (e) => {
+        const files = Array.from(e.target.files).filter(file => file.type.startsWith('audio/'));
+        
+        if (files.length > 0) {
+            files.forEach(file => {
+                const url = URL.createObjectURL(file);
+                const newTrack = {
+                    title: file.name.replace(/\.[^/.]+$/, ""),
+                    artist: 'Archivo local',
+                    src: url
+                };
+                originalPlaylist.push(newTrack);
+            });
+            
+            if (isShuffleEnabled) {
+                shuffledPlaylist = shuffleArray(originalPlaylist);
+            }
+            
+            updatePlaylistUI();
+        }
     });
+}
+
+// Inicialización
+function initializePlayer() {
+    if (!audio) {
+        console.error('Elemento de audio no encontrado');
+        return;
+    }
+    
+    audio.volume = 1;
+    if (volumeControl) volumeControl.value = 100;
+    updateVolumeIcon();
+    updatePlayPauseIcon();
+    loadTrack(currentTrackIndex);
+    updatePlaylistUI();
+    
+    console.log('Reproductor inicializado correctamente');
+    console.log('Ruta de audio detectada:', audioPath);
+}
+
+// Inicializar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePlayer);
+} else {
+    initializePlayer();
 } 

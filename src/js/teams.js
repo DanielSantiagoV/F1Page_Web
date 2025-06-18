@@ -1,48 +1,110 @@
-import '../components/equipos.js';
-import { equipos as equiposData } from "../data/equipos.js";
+// ../js/teams.js
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Manejo del menú hamburguesa
+// Importa los componentes Custom Elements
+import '../components/equipos.js';
+
+// Define la URL de la API
+const API_URL = "https://685150138612b47a2c09856e.mockapi.io/f1data";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  // --- Manejo del menú hamburguesa (sin cambios) ---
   const icon = document.querySelector(".hamburger-icon");
-  if (icon) {
+  const menu = document.querySelector(".menu-links");
+
+  if (icon && menu) {
     icon.addEventListener("click", () => {
-      const menu = document.querySelector(".menu-links");
       menu.classList.toggle("open");
       icon.classList.toggle("open");
     });
   }
 
-  // Manejo de la selección de equipos
-  function selectTeam(button, estadisticaId) {
-    const allStats = document.querySelectorAll('.estadistica');
-    allStats.forEach(stat => {
-      stat.style.display = 'none';
-    });
+  // --- Lógica principal de consumo de API y manejo de Custom Elements ---
 
-    const selectedStat = document.getElementById(estadisticaId);
-    if (selectedStat) {
-      selectedStat.style.display = 'block';
+  const equiposCardElement = document.querySelector('equipos-card');
+  const equiposCardAdminElement = document.querySelector('equipos-card-admin');
+
+  // Función para obtener los equipos de la API
+  async function fetchTeams() {
+    try {
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error(`Error HTTP! estado: ${response.status}`);
+      }
+      const data = await response.json();
+      
+      // ¡IMPORTANTE! Acceder al array 'equipos' que está anidado en el primer objeto de la respuesta
+      if (data && data.length > 0 && data[0].equipos) {
+        return data[0].equipos;
+      } else {
+        console.warn("La estructura de datos de la API no contiene el array 'equipos' en el formato esperado.");
+        return [];
+      }
+    } catch (error) {
+      console.error("Error al obtener los equipos de F1:", error);
+      alert("Error al cargar los equipos. Por favor, intente más tarde.");
+      return []; // Devuelve un array vacío en caso de error
     }
   }
 
-  // Inicializar partículas
-  if (typeof particlesJS !== 'undefined') {
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: "#ffffff" },
-        shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 } },
-        opacity: { value: 0.5, random: false, anim: { enable: false } },
-        size: { value: 3, random: true, anim: { enable: false } },
-        line_linked: { enable: true, distance: 150, color: "#ff1e00", opacity: 0.4, width: 1 },
-        move: { enable: true, speed: 3, direction: "none", random: false, straight: false, out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
-        modes: { grab: { distance: 200, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } }
-      },
-      retina_detect: true
+  // --- Funciones de añadir/eliminar equipo (simuladas localmente) ---
+  // IMPORTANTE: Con la estructura actual de la API (un solo objeto que contiene arrays anidados),
+  // MockAPI.io no permite operaciones POST/DELETE directamente en los elementos individuales
+  // de los arrays anidados.
+  //
+  // Para que la funcionalidad de añadir/eliminar equipos individuales funcionara realmente
+  // contra la API, necesitarías reestructurar tu MockAPI.io para tener colecciones separadas,
+  // por ejemplo:
+  // - https://685150138612b47a2c09856e.mockapi.io/equipos
+  // - https://685150138612b47a2c09856e.mockapi.io/pilotos
+  // ... donde cada 'equipo' o 'piloto' sería un recurso de nivel superior con su propio ID.
+  //
+  // Por ahora, estas funciones simulan la adición/eliminación a nivel de la interfaz de usuario
+  // (es decir, los cambios se verán en tu navegador, pero no se guardarán en la API remota).
+
+  // Función simulada para añadir un equipo
+  async function addTeamLocally(newTeamData) {
+    alert("AVISO: La función 'Añadir equipo' solo se aplica localmente. Para guardar en la API, se requiere una reestructuración.");
+    return newTeamData; // Devolvemos los datos tal cual, con el ID temporal ya incluido
+  }
+
+  // Función simulada para eliminar un equipo
+  async function deleteTeamLocally(teamId) {
+    alert("AVISO: La función 'Eliminar equipo' solo se aplica localmente. Para guardar en la API, se requiere una reestructuración.");
+    return true; // Siempre 'exitoso' a nivel local
+  }
+
+  // Cargar datos al inicio y pasarlos a los componentes
+  const initialTeams = await fetchTeams();
+  
+  if (equiposCardElement) {
+    equiposCardElement.equipos = initialTeams; // Pasa los datos a EquiposCard
+  }
+
+  if (equiposCardAdminElement) {
+    equiposCardAdminElement.equipos = initialTeams; // Pasa los datos a EquiposCardAdmin
+
+    // Escuchar evento 'add-team' desde EquiposCardAdmin
+    equiposCardAdminElement.addEventListener('add-team', async (event) => {
+      const newTeamData = event.detail;
+      const addedTeam = await addTeamLocally(newTeamData); // Llama a la función simulada
+      if (addedTeam) {
+        // Si se "agregó" correctamente localmente, actualiza la lista en el componente y cierra el modal
+        const currentTeams = equiposCardAdminElement.equipos;
+        equiposCardAdminElement.equipos = [...currentTeams, addedTeam];
+        equiposCardAdminElement.closeModal(); // Cerrar el modal del Custom Element
+      }
+    });
+
+    // Escuchar evento 'delete-team' desde EquiposCardAdmin
+    equiposCardAdminElement.addEventListener('delete-team', async (event) => {
+      const { id, cardElement } = event.detail;
+      const success = await deleteTeamLocally(id); // Llama a la función simulada
+      if (success) {
+        // Si se "eliminó" correctamente localmente, actualiza la lista en el componente
+        const currentTeams = equiposCardAdminElement.equipos;
+        equiposCardAdminElement.equipos = currentTeams.filter(team => team.id !== id);
+        cardElement.remove(); // Eliminar la tarjeta del DOM
+      }
     });
   }
-}); 
+});

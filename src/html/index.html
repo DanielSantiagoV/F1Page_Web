@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<ht lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula 1</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/variable.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="src/assets/images/logo-f1.png" type="image/png">
+</head>
+    <body>
+        <!-- Barra superior blanca -->
+        <div class="topbar">
+            <div class="topbar-left">
+                <img 
+                    src="https://media.formula1.com/image/upload/f_auto,c_limit,w_55,q_auto/etc/designs/fom-website/images/fia_logo"
+                    alt="FIA Logo"
+                    width="37"
+                    height="25"
+                    loading="lazy"
+                    class="fia-logo"
+                />
+                <span class="series active">F1<sup>®</sup></span>
+                <span class="series">F2™</span>
+                <span class="series">F3™</span>
+                <span class="series">F1 ACADEMY™</span>
+            </div>
+            
+            <div class="topbar-right">
+               <div class="footer-f1-tv">
+                <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_112,q_auto/nwp-navigation/f1-tv-logo" 
+                     alt="F1® TV" 
+                     class="footer-f1-tv-logo" 
+                     width="75" 
+                     height="12" 
+                     loading="lazy" />
+               </div>
+
+                <a href="login.html" class="btn-signin"><i class="fas fa-user"></i> SIGN IN</a>
+                <a href="register.html" class="btn-subscribe">SUBSCRIBE</a>
+            </div>
+        </div>
+        <!-- Barra roja principal -->
+        <nav class="main-navbar">
+          <img src="../assets/images/logof1-blanco.png" alt="F1 Logo" class="main-logo" />
+          
+          <ul class="main-menu">
+              <li><a href="drivers.html">Drivers</a></li>
+              <li><a href="teams.html">Teams</a></li>
+              <li><a href="vehicles.html">Vehicles</a></li>
+              <li><a href="tracks.html">Tracks</a></li>
+          </ul>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+      </nav>
+      
+      <div class="menu-overlay"></div>
+      
+      <main>
+          </main>
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <span class="hero-label">NEW RELEASE</span>
+                        <h1>F1: La Película – El rugido de la velocidad en la gran pantalla</h1>
+                        <p>
+                            Descubre la nueva película de Fórmula 1 protagonizada por Brad Pitt y Damson Idris, dirigida por Joseph Kosinski (Top Gun: Maverick) y producida por Lewis Hamilton. Vive la emoción de la F1 como nunca antes, con escenas reales en los circuitos y una historia que te pondrá al borde del asiento. ¡No te pierdas el estreno más esperado por los fans del automovilismo!
+                        </p>
+                        <a href="https://www.youtube.com/watch?v=aw8YyC4B1EA" target="_blank" class="btn-read-more">Ver trailer en YouTube</a>
+                    </div>
+                    <div class="hero-image">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/aw8YyC4B1EA?si=yZ2xSlT_8JvsThKm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest News Grid -->
+            <section class="news-grid">
+                <div class="news-header">
+                    <h2>LATEST NEWS</h2>
+                    <a href="#" class="view-all">VIEW ALL NEWS</a>
+                </div>
+                <div class="news-container">
+                    <!-- Noticia actual destacada -->
+                    <article class="news-card featured">
+                        <div class="news-image">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/fom-website/2025/Canada/WHAT TO WATCH FOR V1" alt="Silverstone GP 2025" loading="lazy" />
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category">RACE REPORT</span>
+                            <h3>Verstappen y Norris protagonizan un duelo épico en Silverstone 2025</h3>
+                            <p>El GP de Gran Bretaña 2025 nos regaló una batalla inolvidable entre Verstappen y Norris, con adelantamientos al límite y emoción hasta la última vuelta.</p>
+                            <span class="news-date">13 July 2025</span>
+                        </div>
+                    </article>
+                    <!-- Noticia reciente -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/0ef8f892-bb4b-4f26-86f4-0f9fae3283dd/85d10eb7-cb0a-4127-9a27-9eeb632bf27d/432x243/match/image.jpg" alt="Austria GP 2025" loading="lazy" />
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category">NEWS</span>
+                            <h3>Leclerc logra la pole en Austria y Ferrari vuelve a brillar</h3>
+                            <span class="news-date">29 June 2025</span>
+                        </div>
+                    </article>
+                    <!-- Noticia de tecnología -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <video 
+                              class="minute_apv" 
+                              minvideoid="6504057" 
+                              muted 
+                              playsinline 
+                              webkit-playsinline 
+                              disableremoteplayback 
+                              loop 
+                              preload="auto" 
+                              autoplay 
+                              src="https://apv-static.minute.ly/videos/v-ad2c21d4-74b5-47e6-4791857-a862-03d32f1ac806-s5.539-11.545m.mp4" 
+                              data-src="https://apv-static.minute.ly/videos/v-ad2c21d4-74b5-47e6-4791857-a862-03d32f1ac806-s5.539-11.545m.mp4" 
+                              data-media_file_size="200" 
+                              data-media_dimensions="356,200" 
+                              style="transition: opacity 0.5s ease-out; position: relative; display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0;"
+                              aria-label="Video highlight">
+                            </video>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category">TECH</span>
+                            <h3>Las nuevas baterías revolucionan la estrategia en 2025
+                            </h3>
+                            <h4> </h4>
+                            <span class="news-date">15 May 2025</span>
+                        </div>
+                    </article>
+                    <!-- Noticia de pilotos -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <video class="minute_apv" minvideoid="6504168" muted playsinline webkit-playsinline disableremoteplayback loop src="https://apv-static.minute.ly/videos/v-defdb428-584a-40a3-4791693-aeb9-953569d93499-s51.485-57.491m.mp4" data-src="https://apv-static.minute.ly/videos/v-defdb428-584a-40a3-4791693-aeb9-953569d93499-s51.485-57.491m.mp4" data-media_file_size="200" preload="auto" autoplay data-media_dimensions="356,200" style="transition: opacity 0.5s ease-out; position: relative; display: block; width: calc(100% + 1px); height: calc(100% + 1px); object-fit: cover; border-radius: 0px;"></video>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category">DRIVERS</span>
+                            <h3>Piastri sorprende y suma su primer podio de la temporada</h3>
+                            <span class="news-date">20 April 2025</span>
+                        </div>
+                    </article>
+                    <!-- Noticia de video -->
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_576,q_auto/f_auto,c_fill,q_auto,w_420,g_faces,ar_16:9/fom-website/2025/Tech%20Weekly/tech-weekly-front-wing-spain-header-1" alt="Miami GP 2025" loading="lazy" />
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category">VIDEO</span>
+                            <h3>Highlights: Los mejores momentos del GP de Miami 2025</h3>
+                            <span class="news-date">5 March 2025</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Featured Video Section -->
+            <section class="featured-video">
+                <div class="video-container">
+                    <div class="video-content">
+                        <h2>F1 2025: The New Era</h2>
+                        <p>Get ready for the most exciting season yet with revolutionary cars, new faces, and intense competition.</p>
+                        <button class="btn-watch">
+                            WATCH NOW <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                    <div class="video-thumbnail">
+                        <video class="minute_apv" minvideoid="6503759" muted playsinline webkit-playsinline disableremoteplayback loop src="https://apv-static.minute.ly/videos/v-d7b5330c-07db-4613-4791399-a607-cffdd87ecf89-s118.118-126.593l.mp4" data-src="https://apv-static.minute.ly/videos/v-d7b5330c-07db-4613-4791399-a607-cffdd87ecf89-s118.118-126.593l.mp4" data-media_file_size="300" preload="auto" autoplay data-media_dimensions="534,300" style="transition: opacity 0.5s ease-out; position: relative; display: block; width: calc(100% + 1px); height: calc(100% + 1px); object-fit: cover; border-radius: 0px;"></video>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <section class="top-banner">
+                  <div class="top-banner-text">
+                    <h2>2024 F1 moments you may have missed so far!</h2>
+                    <p>
+                      From Charles Leclerc welcoming Oscar Piastri to his family, some hilarious cooldown moments and so many incredible on-track battles, sit back and enjoy some things you have missed so far throughout the 2024 F1 season...
+                    </p>
+                    <button class="btn-watch">
+                      WATCH NOW <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+                  <video class="minute_apv" minvideoid="6500629" muted playsinline webkit-playsinline disableremoteplayback loop src="https://apv-static.minute.ly/videos/v-5414ce41-b9f0-4054-4789894-9beb-bb7b228f566f-s0.0-7.975m.mp4" data-src="https://apv-static.minute.ly/videos/v-5414ce41-b9f0-4054-4789894-9beb-bb7b228f566f-s0.0-7.975m.mp4" data-media_file_size="200" preload="auto" autoplay data-media_dimensions="356,200" style="transition: opacity 0.5s ease-out; position: relative; display: block; width: calc(100% + 1px); height: calc(100% + 1px); object-fit: cover; border-radius: 0px;"></video>
+                </section>
+            
+               
+
+
+              <section class="driver-standings" aria-label="Driver Standings Section">
+                <section class="header-drivers">
+                  <h1>Driver Standings</h1>
+                  <div class="cards" aria-label="Top 3 driver cards">
+                    <article class="card norris">
+                      <img src="/src/assets/images/lando-norris.png" alt="" />
+                      <div class="card-footer">
+                        <p>Lando <img src="/src/assets/images/uk-flag.png" alt="" class="country"/></p>
+                        <p class="name">Norris</p>
+                      </div>
+                    </article>
+                    <article class="card piastri">
+                      <img src="/src/assets/images/oscar-piastri.png" alt="" />
+                      <div class="card-footer">
+                        <p>Oscar <img src="/src/assets/images/au-flag.png" alt="" class="country"/></p>
+                        <p class="name">Piastri</p>
+                      </div>
+                    </article>
+                    <article class="card verstappen">
+                      <img src="/src/assets/images/max-verstappen.png" alt="" />
+                      <div class="card-footer">
+                        <p>Max <img src="/src/assets/images/nl-flag.png" alt="" class="country"/></p>
+                        <p class="name">Verstappen</p>
+                      </div>
+                    </article>
+                  </div>
+                </section>
+                <section class="main">
+                  <ul>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color1">1</span>
+                        <span>Oscar <span class="driver-name">PIASTRI</span><span class="team">McLaren</span></span>
+                      </div>
+                      <div class="points color1">131 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color2">2</span>
+                        <span>Lando <span class="driver-name">NORRIS</span><span class="team">McLaren</span></span>
+                      </div>
+                      <div class="points color2">115 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color3">3</span>
+                        <span>Max <span class="driver-name">VERSTAPPEN</span><span class="team" style="color:#7a7a7a;">Red Bull Racing</span></span>
+                      </div>
+                      <div class="points color3">99 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color4">4</span>
+                        <span>George <span class="driver-name">RUSSELL</span><span class="team">Mercedes</span></span>
+                      </div>
+                      <div class="points color4">93 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color5">5</span>
+                        <span>Charles <span class="driver-name">LECLERC</span><span class="team">Ferrari</span></span>
+                      </div>
+                      <div class="points color5">53 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                    <li class="list-drivers">
+                      <div class="left">
+                        <span class="position color6">6</span>
+                        <span>Kimi <span class="driver-name">ANTONELLI</span><span class="team">Mercedes</span></span>
+                      </div>
+                      <div class="points color6">48 PTS <i class="fas fa-chevron-right"></i></div>
+                    </li>
+                  </ul>
+                </section>
+                <div class="btn-container">
+                  <button class="btn" type="button">
+                    View full standings <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </section> 
+              
+         
+        </main>
+        <footer class="f1-footer">
+            <div class="footer-apps-social">
+                <div class="footer-apps">
+                    <span>DOWNLOAD THE OFFICIAL F1 APP</span>
+                    <a href="#"><img src="/src/media/google-play.png" alt="Google Play" /></a>
+                    <a href="#"><img src="/src/media/app-store.png" alt="App Store" /></a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-partners">
+                <div class="footer-partners-title">
+                    <img src="/src/media/logo-f1.png" alt="F1 logo" class="footer-f1-logo" />
+                    <span>Our partners <i class="fas fa-chevron-right"></i></span>
+                </div>
+                <div class="footer-partners-logos partners-row">
+                    <a class="footer-partner-link" target="_blank" href="https://www.lvmh.com/en">
+                        <img alt="LVMH" loading="lazy" width="125" height="70"
+                            srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lvmh 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lvmh 1200w"
+                            src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lvmh"
+                            style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="http://bit.ly/2IjWDjE">
+                        <img alt="Pirelli" loading="lazy" width="125" height="70"
+                            srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/pirelli 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/pirelli 1200w"
+                            src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/pirelli"
+                            style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.saudiaramco.com/">
+                        <img alt="Aramco" loading="lazy" width="125" height="70"
+                            srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/aramco 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/aramco 1200w"
+                            src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/aramco"
+                            style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.heineken.com/">
+                        <img alt="Heineken" loading="lazy" width="125" height="70"
+                          srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/Heineken%20-%20Outlined 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/Heineken%20-%20Outlined 1200w"
+                          src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/Heineken%20-%20Outlined"
+                          style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://aws.amazon.com/f1/">
+                      <img alt="AWS" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/AWS%20GLOBAL 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/AWS%20GLOBAL 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/AWS%20GLOBAL"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.lenovo.com/">
+                      <img alt="Lenovo" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lenovo 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lenovo 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/fom-website/2020/sponsors/lenovo"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://inmotion.dhl/en/formula-1/?utm_content=DHL-F1&amp;utm_source=f1&amp;utm_medium=website&amp;utm_campaign=DHL-F1">
+                      <img alt="DHL" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/dhl 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/dhl 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/dhl"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.qatarairways.com/">
+                      <img alt="Qatar Airways" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/qatar 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/qatar 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/qatar"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="http://www.msccruises.com">
+                      <img alt="MSC" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/msc 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/msc 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/msc"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.crypto.com">
+                      <img alt="Crypto.com" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/crypto.com 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/crypto.com 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/crypto.com"
+                        style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="https://www.salesforce.com/campaign/formula1/?d=7013y000002RO1gAAG&amp;utm_source=formula1&amp;utm_medium=referral&amp;utm_campaign=us_c360aw&amp;utm_content=formula1-salesforce-logo_7013y000002RO1gAAG">
+                      <img alt="Salesforce" loading="lazy" width="125" height="70"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/salesforce 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/salesforce 1200w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_187,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/salesforce"
+                        style="color: transparent;">
+                    </a>
+                   
+                </div>
+
+              </div>
+            </div>
+
+                <div class="footer-partners-logos partners-row">
+                    <a class="footer-partner-link" target="_blank" href="#">
+                        <img alt="Louis Vuitton" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                          srcset="https://es.louisvuitton.com/esp-es/homepage 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton 3840w"
+                          src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/louis%20vuitton"
+                          style="color: transparent;">
+                    </a>
+                    <a class="footer-partner-link" target="_blank" href="#">
+                        <img alt="TAG Heuer" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                          srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1 3840w"
+                          src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/TAGH_Shield_Monochrome_White-pw1"
+                          style="color: transparent;">
+                    </a>
+
+
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Moët Hennessy" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/moet%20hennessy"
+                        style="color: transparent;">
+                    </a>
+
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="tarjeta American Express" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex"
+                        style="color: transparent;">
+                    </a>
+
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Santander" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Allwyn" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Globant" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant"
+                        style="color: transparent;">
+                    </a>
+
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Autoridad de Convenciones y Visitantes de Las Vegas" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Paramount+" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Barilla" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Liqui Moly" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly"
+                        style="color: transparent;">
+                    </a>
+
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="Estar protegido" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="PwC" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc"
+                        style="color: transparent;">
+                    </a>
+                    
+                    <a class="footer-partner-link" target="_blank" href="#">
+                      <img alt="PepsiCo" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                        srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico"
+                        style="color: transparent;">
+                    </a>
+                  
+                </div>
+
+              </div>
+            </div>
+
+                <div class="footer-partners-logos partners-row">
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Puma" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 3840w"
+                        src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma"
+                        style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="TATA" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                    <img alt="tarjeta American Express" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Amex"
+                      style="color: transparent;">
+                  </a>
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Santander" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/santander"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Allwyn" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/allwyn"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Globant" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/globant"
+                      style="color: transparent;">
+                  </a>
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Autoridad de Convenciones y Visitantes de Las Vegas" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/las%20vegas"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Paramount+" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+ 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/Paramount+"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Barilla" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/barilla"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Liqui Moly" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/liqui-moly"
+                      style="color: transparent;">
+                  </a>
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Estar protegido" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/nestle"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="PwC" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pwc"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="PepsiCo" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/pepsico"
+                      style="color: transparent;">
+                  </a>
+                
+                </div>
+
+              </div>
+            </div>
+
+                <div class="footer-partners-logos partners-row">
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Puma" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/puma"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="TATA" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/TATA"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="Aggreko" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/fom-website/2020/sponsors/aggreko"
+                      style="color: transparent;">
+                  </a>
+                  
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="BBS" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/BBS"
+                      style="color: transparent;">
+                  </a>
+
+                  <a class="footer-partner-link" target="_blank" href="#">
+                    <img alt="McDonald's" loading="lazy" width="90" height="50" decoding="async" data-nimg="1" sizes="100vw"
+                      srcset="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 640w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 750w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 828w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 1080w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 1200w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 1920w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 2048w, https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds 3840w"
+                      src="https://media.formula1.com/image/upload/f_auto,c_limit,w_135,q_auto/f_auto/q_auto/content/dam/fom-website/2020/sponsors/mcdonalds"
+                      style="color: transparent;">
+                  </a>
+                  
+                   
+                </div>
+            </div>
+            <div class="footer-mainlinks">
+              <div class="footer-links-col">
+                <p class="https://www.formula1.com/en/latest">Latest</p>
+                <a href="https://www.formula1.com/en/page/what-is-f1">What is F1?</a>
+                <a href="https://www.formula1.com/en/video">Video</a>
+                <a href="https://www.formula1.com/en/drivers">Drivers</a>
+                <a href="https://www.formula1.com/en/teams">Teams</a>
+                <a href="https://www.formula1.com/en/racing/2025">Schedule</a>
+              </div>
+            
+              <div class="footer-links-col">
+                <p class="https://www.formula1.com/en/results/2025/races">Results</p>
+                <a href="https://www.formula1.com/en/results/2025/races/1263/canada/race-result">2025 SEASON</a>
+                <a href="https://www.formula1.com/en/results/2025/drivers">DRIVER STANDINGS</a>
+                <a href="https://www.formula1.com/en/results/2025/team">TEAM STANDINGS</a>
+                <a href="https://www.formula1.com/en/results/1950/races/94/great-britain/race-result">ARCHIVE 1950–2024</a>
+                <a href="https://www.formula1.com/en/results/awards">F1 AWARDS</a>
+              </div>
+            
+              <div class="footer-links-col">
+                <p class="footer-link-title">Gaming</p>
+                <a href="https://f1esports.com/">ESPORTS</a>
+                <a href="https://fantasy.formula1.com/en/?utm_source=web_formula1.com&utm_medium=internal_referral&utm_campaign=navigation">FANTASY</a>
+                <a href="https://www.ea.com/games/f1/f1-25">F1 25</a>
+                <a href="https://www.f1manager.com/">F1 MANAGER 24</a>
+                <a href="https://f1predict.formula1.com/en">F1 PREDICT</a>
+                <a href="https://www.ea.com/en-gb/games/f1">F1 MOBILE RACING</a>
+                <a href="https://www.hutch.io/our-games/f1-clash/">F1 CLASH</a>
+              </div>
+            
+              <div class="footer-links-col">
+                <p class="footer-link-title">Live Timing</p>
+                <a href="https://www.formula1.com/en/timing/f1-live">View Live Timing</a>
+              </div>
+            
+              <div class="footer-links-col">
+                <p class="footer-link-title">Tickets</p>
+                <a href="https://f1experiences.com/?utm_source=formula1.com&utm_medium=referral&utm_campaign=general">F1® Experiences</a>
+                <a href="https://f1store.formula1.com/en/?_s=bm-fi-f1-prtsite-topnav-230720-jm">Store</a>
+                <a href="https://tickets.formula1.com/en/pc-paddock-club">Paddock Club</a>
+                <a href="https://f1tv.formula1.com/">F1® TV</a>
+                <a href="https://www.f1authentics.com/">F1® Authentics</a>
+              </div>
+            
+              <div class="footer-links-col">
+                <p class="footer-link-title">Rules & Regulations</p>
+                <a href="https://www.formula1.com/en/latest/article/from-fastest-lap-to-increased-rookie-running-7-rule-changes-you-need-to-know.pgdSMDnDyv1aJUgtcKPp6">View Rules</a>
+              </div>
+            </div>
+            
+            <div class="footer-legals">
+                <a href="https://www.formula1.com/en/latest/article/faqs-and-contact-information.1TqkueKz2aRd9diRUQlq2U">CONTACTS</a>
+                <a href="https://support.formula1.com/s/?language=en_US">F1® TV SUPPORT</a>
+                <a href="https://account.formula1.com/#/en/privacy-policy">PRIVACY POLICY</a>
+                <a href="https://account.formula1.com/#/en/cookie-policy/">COOKIES POLICY</a><a href="#">COOKIE PREFERENCES</a>
+                <a href="https://www.formula1.com/en/information/guidelines.4EOKE9RRqevL4niTK9kWyt">GUIDELINES</a>
+                <a href="https://www.formula1.com/en/information/legal-notices.7egvZU48hzrypubGBNcQKt">LEGAL NOTICES</a>
+                <a href="https://media.formula1.com/image/upload/v1731681061/fom-website/manual/Misc/f1_code_of_conduct/FOM_24_Code_of_Conduct_AWK_2024_R5.pdf">CODE OF CONDUCT</a>
+                <a href="https://www.formula1.com/en/information/formula-1-anti-bribery-principles.6c4e0k31Ao87urACz8RwfU">ANTI-BRIBERY</a><a href="https://www.formula1.com/en/information/statement-of-commitment-to-respect-for-human-rights.1OC6AmJr53THNGI9TNFxjf">HUMAN RIGHTS</a><a href="https://media.formula1.com/image/upload/v1745404336/content/dam/fom-website/manual/Misc/GenderPay/F1GenderPayGapReport2025.pdf">GENDER PAY REPORT</a>
+                <a href="https://account.formula1.com/#/en/terms-of-use">TERMS OF USE</a><a href="https://www.formula1.com/en/information/formula-1-partners.2shz7bIVhGgS3ovP69N3Rs">PARTNERS</a><a href="https://www.f1fanvoice.com/auth/sign_in">F1® FAN VOICE</a>
+                <a href="https://www.formula1.com/en/latest/tags/beyond-the-grid.63HGi6Q0grEg1ToZBtPNQ9">BEYOND THE GRID - THE F1® PODCAST</a><a href="https://corp.formula1.com/">F1® CORPORATE SITE</a>
+                <a href="https://join.partnerize.com/formula1/en">BECOME AN AFFILIATE</a><a href="https://raceprogramme.formula1.com/2025/spain/">OFFICIAL F1® RACE PROGRAMME</a>
+                <a href="https://www.formula1.com/en/information/formula-1-modern-slavery-statement-2024-2025.kXcj3meEwCnAtHoSNSySQ">MODERN SLAVERY STATEMENT</a>
+            </div>
+            <div class="footer-bottom">
+              <img src="https://media.formula1.com/image/upload/f_auto,c_limit,w_202,q_auto/f_auto/q_auto/fom-website/etc/designs/fom-website/images/F1_75_Logo" alt="Formula 1 Logo" loading="lazy" />
+              <p>© 2003-2025 Formula One World Championship Limited</p>
+          </div>
+          <script src="../js/hamburguesa.js"></script>
+        </footer>      
+    </body>
+</html>
